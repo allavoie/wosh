@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/istanbul test ./node_modules/.bin/_mocha -- -R spec"
   },
   "repository": {
     "type": "git",
@@ -12,12 +12,21 @@
   },
   "author": "",
   "license": "MIT",
-  "bin": {"wosh": "./wosh.js"},
+  "bin": {
+    "wosh": "./wosh.js"
+  },
   "bugs": {
     "url": "https://github.com/allavoie/wosh/issues"
   },
   "homepage": "https://github.com/allavoie/wosh#readme",
   "dependencies": {
-    "child_process": "^1.0.2"
+    "chai": "^3.5.0",
+    "child_process": "^1.0.2",
+    "commander": "^2.9.0",
+    "istanbul": "^0.4.5",
+    "lodash": "^4.16.1",
+    "minimist": "^1.2.0",
+    "mocha": "^3.0.2",
+    "sinon": "^1.17.6"
   }
 }
