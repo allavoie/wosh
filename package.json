@@ -13,7 +13,7 @@
   "author": "",
   "license": "MIT",
   "bin": {
-    "wosh": "bin/wosh.js"
+    "wosh": "bin/wosh"
   },
   "bugs": {
     "url": "https://github.com/allavoie/wosh/issues"
