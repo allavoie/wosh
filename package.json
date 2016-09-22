@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/allavoie/wosh.git"
+    "url": "http://github.com/allavoie/wosh.git"
   },
   "author": "",
   "license": "MIT",
