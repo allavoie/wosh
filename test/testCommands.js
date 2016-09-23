@@ -8,7 +8,7 @@ const sinon = require("sinon");
 describe("WOSH - Wo shell commander", () => {
     describe("Support multiple shell context and syntax", ()=> {
 
-        it("should support a script file command", (done) => {
+        it("should support a script file command [echo-simple.sh]", (done) => {
             const spawn = require('child_process').spawn;
             let runSh = spawn(__dirname + '/echo-simple.sh');
             runSh.stdout.on('data', (data)=>{ assert.equal("hello\n", `${data}`, "echo string found"); });
@@ -18,7 +18,7 @@ describe("WOSH - Wo shell commander", () => {
             });
         });
 
-        it("should support a simple echo command (with single quote)", (done) => {
+        it("should support a simple [echo 'hello world']", (done) => {
             const exec = require("child_process").exec;
             const SINGLE_QUOTE = "'";
             const str = "hello world";

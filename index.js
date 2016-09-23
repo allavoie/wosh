@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+// $ echo "allo asdf sdf  f 'asdf " | node index.js
 'use strict';
 
 let cmd = require('child_process');
