@@ -18,17 +18,12 @@ commandParams
       console.log('exec "%s %s"', cmd, options);
     });
 
-//commandParams.parse(process.argv);
 
 if ( commandParams.verbose ){
    verboseLevel = 1;
 }
 
 let cmdArgs = require('minimist')(process.argv.slice(2));
-
-//if ( commandParams.command ){
-//   console.log("command=%j", commandParams.command);
-//}
 
 let bashCmd = 'sleep 3';
 
