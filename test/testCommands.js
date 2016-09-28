@@ -21,14 +21,12 @@ describe("WOSH - Wo shell commander", () => {
 
         it("should deal with command [>cat ./simple-file.json | ../bin/wosh sort]", (done) => {
             const spawn = require('child_process').spawn;
-            let aCmd = "echo";
-            let args = ["Aie, hello\nyou"];
-            let runSh = spawn(aCmd, args);
-            runSh.stdout.on('data', (data)=>{
-                console.log("Echo output:", `${data}`);
-            });
-            runSh.stderr.on('data', (data)=>{ console.log(`e=${data}`); });
-            runSh.on('close', (code)=>{ assert.equal(code, 0, "No error code (0)");
+            const exec = require('child_process').exec;
+
+
+            let aCmd = "cat ./test/simple-file.json | sort";
+            let runSh = exec(aCmd, (error, stdout, stderr)=>{
+                console.log("Echo output:", stdout);
                 done();
             });
         });
