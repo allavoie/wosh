@@ -11,18 +11,23 @@ describe("WOSH - Wo shell commander", () => {
     describe("Accept input from pipe", ()=> {
 
         /*
-        * @api
-        * @parameters
-        * @url http://www.computerhope.com/unix/usort.htm  -- To explain the type of input (ending with null separator)
-        * @url http://stackoverflow.com/questions/35004492/node-child-process-spawn-multiple-commands
-        * @intention: A component shall suuport different source of input (stdin, pipe, file, wostore)
-        *
-        */
+         * @name         wosh
+         * @example      wosh echo "hello world"
+         * @@results:     stdout as simple echo command
+         *                if wo is running, capture command, store in db, store current cmd output execution
+         * @synopsis     wosh -o...  cmd parameters
+         * @synopsis     wosh -of... cmd parameters
+         * @description
+         * @parameters
+         * @url http://www.computerhope.com/unix/usort.htm  -- To explain the type of input (ending with null separator)
+         * @url http://stackoverflow.com/questions/35004492/node-child-process-spawn-multiple-commands
+         * @intention: A component shall suuport different source of input (stdin, pipe, file, wostore)
+         *
+         */
 
-        it("should deal with command [>cat ./simple-file.json | ../bin/wosh sort]", (done) => {
+        it("should deal with command [>wosh cat ./simple-file.json | wosh sort]", (done) => {
             const spawn = require('child_process').spawn;
             const exec = require('child_process').exec;
-
 
             let aCmd = "cat ./test/simple-file.json | sort";
             let runSh = exec(aCmd, (error, stdout, stderr)=>{
@@ -31,7 +36,7 @@ describe("WOSH - Wo shell commander", () => {
             });
         });
 
-        it("should support a simple [>echo 'hello\nyou'] - command with special characters", (done) => {
+        it("should support a simple [>wosh echo 'hello\nyou'] - command with special characters", (done) => {
             const spawn = require('child_process').spawn;
             let aCmd = "echo";
             let args = ["Aie, hello\nyou"];
