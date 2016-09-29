@@ -8,6 +8,19 @@ const sinon = require("sinon");
 describe("WOSH - Wo shell commander", () => {
 
 
+    describe("Accept input/output standards", ()=> {
+        it("support accept config file [>wosh -if configFile.json ...]  // [#test-cmd1]", (done) => {
+            done();
+        });
+        //
+        it("support objectId reference [>wosh -io mongoId ...]  // [?]", (done) => {
+            done();
+        });
+        it("support automatic output data saving [>wosh -i? ...] by default save output in ./wosh.datetime.out.json  // [?]", (done) => {
+            done();
+        });
+
+    });
     describe("Accept input from pipe", ()=> {
 
         /*
