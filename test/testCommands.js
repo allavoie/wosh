@@ -9,6 +9,9 @@ describe("WOSH - Wo shell commander", () => {
 
 
     describe("Accept input/output standards", ()=> {
+        it("should always pass output to next piped process [>wosh -if onfigFile.json ...]  // [#test-cmd1]", (done) => {
+            done();
+        });
         it("support accept config file [>wosh -if configFile.json ...]  // [#test-cmd1]", (done) => {
             done();
         });
@@ -16,7 +19,13 @@ describe("WOSH - Wo shell commander", () => {
         it("support objectId reference [>wosh -io mongoId ...]  // [?]", (done) => {
             done();
         });
-        it("support automatic output data saving [>wosh -i? ...] by default save output in ./wosh.datetime.out.json  // [?]", (done) => {
+        /*
+         * @description:  By default any commands save its outputs and errors somewhere.
+         * In that order it will save data in
+         *    (key-value pair NoSQL db)    // with wostore ?
+         *    file                         ./wosh.datetime.out.json
+         */
+        it("support automatic output data saving [>wosh -i? ...] // [?]", (done) => {
             done();
         });
 
